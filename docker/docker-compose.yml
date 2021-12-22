@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  vaiot:
+    container_name: vaiot-node
+    image: balciu/vaiot-node:v1.0
+    working_dir: /root
+    command: bash -c 'oraivisor start'
+    # --minimum-gas-prices 100000vai'
+    restart: always
+    tty: true
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+    ports:
+      - 1317:1317
+      - 26656:26656
+      - 26657:26657
+    cap_add:
+      - SYS_PTRACE
+    environment:
+      - DAEMON_NAME=vaiotd
+      - DAEMON_HOME=/root/.vaiotd
+      - DAEMON_ALLOW_DOWNLOAD_BINARIES=true
+      - DAEMON_RESTART_AFTER_UPGRADE=true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - .vaiotd/:/root/.vaiotd

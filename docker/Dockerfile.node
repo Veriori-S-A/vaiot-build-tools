@@ -1,0 +1,6 @@
+FROM golang:1.17.3-buster
+
+COPY binaries/cosmovisor /go/bin
+RUN mkdir -p /root/.vaiotd/cosmovisor/genesis/bin && mkdir /root/.vaiotd/cosmovisor/upgrades
+COPY binaries/vaiotd /go/bin
+COPY binaries/vaiotd /root/.vaiotd/cosmovisor/genesis/bin
