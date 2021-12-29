@@ -4,7 +4,7 @@ services:
     container_name: vaiot-node
     image: balciu/vaiot-node:v1.0
     working_dir: /root
-    command: bash -c 'oraivisor start'
+    command: bash -c 'cosmovisor start'
     # --minimum-gas-prices 100000vai'
     restart: always
     tty: true
