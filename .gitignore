@@ -1,3 +1,5 @@
 .vaiot
 priv_key.txt
 .env
+/Dockerfile*
+/docker-compose*

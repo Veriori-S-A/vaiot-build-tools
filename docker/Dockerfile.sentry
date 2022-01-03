@@ -1,0 +1,7 @@
+FROM golang:1.17.3-buster
+
+RUN apt update && apt install jq -y
+COPY binaries/vaiotd /go/bin
+COPY scripts/init-sentry.sh /usr/bin
+RUN chmod u+x /usr/bin/init-sentry.sh
+ENTRYPOINT [ "init-sentry.sh" ]
