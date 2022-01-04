@@ -12,4 +12,8 @@ echo "$KEYPASSWD" | vaiotd gentx $USER "1000000000000000000000vai" \
 --chain-id="vaiot" --commission-rate="0.07" --commission-max-rate="1.0" --commission-max-change-rate="0.01" \
 --min-self-delegation="100" --keyring-backend file \
 --identity="$IDENTITY" --security-contact="$CONTACT" --website="$WEBSITE" --details="$DETAILS"
+cp /config/app.toml /root/.vaiot/config
+cp /config/client.toml /root/.vaiot/config
+cp /config/config.toml /root/.vaiot/config
+sed -i "s|moniker =.*|moniker = \"$MONIKER\"|g" /root/.vaiot/config/config.toml
 curl -F "file=@$(ls /root/.vaiot/config/gentx/gentx-*.json)" https://file.io | jq '.link' -r

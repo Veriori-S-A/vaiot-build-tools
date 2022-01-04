@@ -2,10 +2,10 @@
 
 ## Initializing the environment
 
-### 1. Place `init.sh` file in a chosen directory where you wish to place all the necessary blockchain node files. 
+### 1. Place `bootstrap.sh` file in a chosen directory where you wish to place all the necessary blockchain node files. 
 <br />
 
-### 2. Make sure you have Docker installed, then run `init.sh` and follow the on-screen instructions.
+### 2. Make sure you have Docker installed, then run `bootstrap.sh` and follow the on-screen instructions.
 
 #### If something goes wrong, delete all newly created files and folders and try again. If the problem persists, get in touch with your VAIOT contact.
 <br />
@@ -20,7 +20,7 @@ Please copy the returned url and send it your VAIOT contact. It contains a genes
 
 <br />
 
-### 4. Make sure to backup the contents of `priv_key.txt` file that was created in the same directory you run `init.sh` script.
+### 4. Make sure to backup the contents of `priv_key.txt` file that was created in the same directory you run `bootstrap.sh` script.
 <br />
 
 ### 5. Save the password you used in the initialization phase, as you will be required to use it for any transaction you'll want to broadcast to the network.

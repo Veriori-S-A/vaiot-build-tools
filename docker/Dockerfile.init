@@ -3,5 +3,9 @@ FROM golang:1.17.3-buster
 RUN apt update && apt install jq -y
 COPY binaries/vaiotd /go/bin
 COPY scripts/init.sh /usr/bin
+RUN mkdir /config
+COPY config/app.toml /config
+COPY config/client.toml /config
+COPY config/config.toml /config
 RUN chmod u+x /usr/bin/init.sh
 ENTRYPOINT [ "init.sh" ]
